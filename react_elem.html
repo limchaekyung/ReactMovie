@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const Title = () => (   //JSX, arrow function
+        <h3 
+            id="title" 
+            onMouseEnter={() => console.log("mouse enter")}
+        >
+            Hello I'm a title
+        </h3>
+    );
+    
+    /*
+    const Title = () => ()와 
+    function Title() {return()};는 같은 함수
+    */
+
+    /* 
+    const h3 = React.createElement( //react_elements
+        "h3", //tag
+        // { id: "sexy-span", style: { color: "red" } }, //property: id, class, style, eventListener
+        {
+            onMouseEnter: () => console.log("mouse enter")
+        },
+        "Hello I'm a span"  //content
+    ); 
+    */
+
+    const Button = () => (
+        <button 
+            style={{backgroundColor: "tomato"}}
+            onClick={() => console.log("im clicked")}
+        >
+            Click me
+       </button>
+    )
+
+   /* 
+   const btn = React.createElement(
+        "button", 
+        {
+            onClick: () => console.log("im clicked"),
+        }, 
+        "Click me"
+    );
+    */
+
+   const Container = () => (  
+        //컴포넌트의 첫글자는 무조건 대문자(소문자는 HTML 태그)
+        //동일한 코드 재사용O
+        <div>
+        <Title />
+        <Button />
+    </div>
+    )
+    ReactDOM.render(<Container />, root);
+
+    /*
+    const container = React.createElement("div", null, [Title, Button]);
+    ReactDOM.render(container, root);
+    */
+</script>
+</html>
