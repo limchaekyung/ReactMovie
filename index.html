@@ -9,40 +9,14 @@
 <script type="text/babel">
     const root = document.getElementById("root");
     function App(){
-        const [counter, setCounter] = React.useState(0); 
-        //useState의 첫번째 값: 초기값 -> let counter = 0;
-        //두번째 값: 그 값을 바꾸는 함수 -> function countUP(){}
-        const onClick = () => {
-            setCounter(counter + 1);
-        }
+        
         return(
             <div>
-                <h3>Total clicks: {counter}</h3>
-                <button onClick={onClick}>Click me</button>
+                <h1>Super Converter</h1>
             </div>
         )
     }
     ReactDOM.render(<App />, root);
 
-    /*
-    const root = document.getElementById("root");
-    let counter = 0;
-    function countUp(){
-        counter = counter + 1;
-        render();
-    }
-    function render(){
-        ReactDOM.render(<App />, root);
-    }
-    function App(){
-        return(
-            <div>
-                <h3>Total clicks: {counter}</h3>
-                <button onClick={countUp}>Click me</button>
-            </div>
-        );
-    }
-    render();
-    */
 </script>
 </html>
